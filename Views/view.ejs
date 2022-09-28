@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+
+      input{
+        width: 180px;
+        height: 20px;
+
+      }
+
+      label{
+        font-size: 20px;
+      }
+
+      button{
+        width: 80px;
+        height: 25px;
+        font-size: 15px;
+        margin-left: 150px;
+      }
+
+        table{
+          margin: auto; 
+          border: 1px solid black; 
+          border-collapse: collapse;
+          
+        }
+        th {
+          border: 1px solid black;
+          padding-left: 80px;
+          padding-right: 80px;
+          font-size: 30px;
+        }
+        td {
+          border: 1px solid black;
+          padding-left: 80px;
+          padding-right: 80px;
+          font-size: 30px;
+        }
+
+        h2 {text-align: center;}
+
+      </style>
+
+
+  </head>
+  <body>
+    <h1 >Here is Your Form</h1>
+     
+    <p id="demo"></p>
+    <form action="/" method="POST">
+      
+
+      <label>Name : </label>
+      <input type="text" name="name" id="name" ,    style="margin-left: 30px;"><br /><br />
+
+      <label>Number :</label>
+      <input type="text" name="number" id="number",  style="margin-left: 12px;" /><br /><br />
+
+      <button type="submit" onclick="append()">Submit</button>
+      <!-- /<button onclick="append()">append</button> -->
+
+    </form>    <br><br><br><br><br><br><br>
+
+    <h2 >Form Details</h2>
+   // <p id="demo1"></p>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Number</th>
+      </tr>
+      <%for(var i=0; i<5;i++){%>
+      <tr>
+        <td><%= name %></td>
+        <td><%- number  %></td>
+      </tr>
+      <%}%>
+    </table>
+
+<!-- 
+    <script>
+
+      
+      const arrName = [];
+      const name = document.getElementById('name').value;
+      arrName.push(name)
+      arrName.push("aman1")
+      arrName.push("aman2")
+
+document.getElementById('demo').innerHTML= arrName;
+    </script> -->
+    
+
+
+
+  </body>
+</html>
