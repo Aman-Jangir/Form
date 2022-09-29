@@ -58,47 +58,35 @@
       
 
       <label>Name : </label>
-      <input type="text" name="name" id="name" ,    style="margin-left: 30px;"><br /><br />
+      <input type="text" name="name" id="name",style="margin-left: 30px;"><br /><br />
 
       <label>Number :</label>
       <input type="text" name="number" id="number",  style="margin-left: 12px;" /><br /><br />
 
-      <button type="submit" onclick="append()">Submit</button>
-      <!-- /<button onclick="append()">append</button> -->
-
+      <button type="submit" >Submit</button>
+      
+      
     </form>    <br><br><br><br><br><br><br>
 
     <h2 >Form Details</h2>
-   // <p id="demo1"></p>
+   
+    <%- Names  %><br>
+    <%- Numbers  %>
 
     <table>
       <tr>
         <th>Name</th>
         <th>Number</th>
       </tr>
-      <%for(var i=0; i<5;i++){%>
+      
       <tr>
-        <td><%= name %></td>
-        <td><%- number  %></td>
+        <td ><%- Names %></td>
+        <td><%- Numbers %></td>
       </tr>
-      <%}%>
+      
+      
     </table>
 
-<!-- 
-    <script>
-
-      
-      const arrName = [];
-      const name = document.getElementById('name').value;
-      arrName.push(name)
-      arrName.push("aman1")
-      arrName.push("aman2")
-
-document.getElementById('demo').innerHTML= arrName;
-    </script> -->
-    
-
-
-
   </body>
+
 </html>

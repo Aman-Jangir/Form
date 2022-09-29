@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-//const User = require("./index");
 const bodyParser = require("body-parser");  //middleWare--> to access req.body
 
 var userCtrl = require("./controller/userController");
@@ -15,11 +14,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.get("/", (req, res) => {
-
-    var name = req.body.name;
-  var number = req.body.number;
-
-  res.render("view",{name,number});
+  res.render("view");
 });
 
 app.post("/",userCtrl.addUser);
