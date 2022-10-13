@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require("sequelize");
 
 const sequelize = new Sequelize(
-  "postgres://postgres:athena@localhost:5432/postgres",{logging:false}
+  "postgres://postgres:athena@localhost:5432/newDb",{logging:false}
 );
 
 sequelize

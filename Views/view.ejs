@@ -18,7 +18,7 @@
 
       button {
         width: 80px;
-        height: 25px;
+        height: 30px;
         font-size: 15px;
         margin-left: 75%;
       }
@@ -27,6 +27,7 @@
         margin: auto;
         border: 1px solid black;
         border-collapse: collapse;
+        background-color: bisque;
       }
       th {
         border: 1px solid black;
@@ -43,61 +44,87 @@
 
       h2 {
         text-align: center;
+        font-family: "Times New Roman", Times, serif;
       }
 
-      .container{
+      .container {
         margin: auto;
         padding-top: 20px;
         padding-bottom: 20px;
         padding-left: 20px;
         margin-left: 600px;
         margin-right: 600px;
-        border: 1px solid black;
+        border: 2px solid rgb(129, 139, 93);
+        background-color: antiquewhite;
       }
     </style>
+
+    <script src="jquery-3.6.0.min.js"></script>
+
   </head>
-  <body>
-    <h1><center>Here is Your Form</center></h1><br>
+  <body style="background-color: rgb(172, 172, 105)">
+    <h1><center>Here is Your Form</center></h1>
+    <br />
 
     <div class="container">
-    <form action="/" method="POST">
-      <label>Name : </label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        style="margin-left: 28px;"
-      /><br /><br />
+      <form action="/" method="POST">
+        <label>Name : </label>
+        <input
+          type="text"
+          name="chomu"
+          id="name"
+          style="margin-left: 28px"
+        /><br /><br />
 
-      <label>Number :</label>
-      <input
-        type="text"
-        name="number"
-        id="number"
-        style="margin-left: 12px"
-      /><br /><br />
+        <label>Number :</label>
+        <input
+          type="text"
+          name="number"
+          id="number"
+          style="margin-left: 12px"
+        /><br /><br />
 
-      <button type="submit" onclick="alert">Submit</button>
-    </form></div>
+        <button type="submit" onclick="getData()"><b>Submit</b></button>
+      </form>
+    </div>
     <br /><br /><br /><br /><br /><br /><br />
 
     <h2>Details Provided By You</h2>
+    
 
-    <table>
+    <table id="tb">
       <tr>
         <th style="padding-left: 3px; padding-right: 3px">S.No.</th>
         <th>Name</th>
         <th>Number</th>
       </tr>
 
-      <% showData.slice(0, 5).forEach(function(value,index){%>
-      <tr>
-        <td style="padding-left: 3px; padding-right: 3px"><%= index + 1 %></td>
-        <td><%= value.dataValues.Name%></td>
-        <td><%= value.dataValues.Number%></td>
-      </tr>
-
-      <% }) %>
+      <% if(button == "block") { %>
+      <% showData.forEach(function(value,index){%>
+        <tr>
+          <td style="padding-left: 3px; padding-right: 3px"><%= index + 1 %></td>
+          <td><%= value.dataValues.Name%></td>
+          <td><%= value.dataValues.Number%></td>
+        </tr>
+        <% }) %>
+        <% } %>
     </table>
+
+    <script>
+      function getData(){
+      $.ajax({
+        type: "POST", 
+        url: "/", 
+        data: "showData",
+        success: function(s) {
+          $("#tb").append("<tr><td>" + value.dataValues.Name + "</td><td>" + value.dataValues.Name + "</td></tr>")
+        }, 
+        error: function(err) { 
+          console.log(err);
+        } 
+      }); 
+    }
+    </script>
   </body>
+  
 </html>

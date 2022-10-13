@@ -13,11 +13,8 @@ require("./model/app");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-app.get("/", (req, res) => {
-  res.render("view");
-});
+app.get("/", userCtrl.getmethod);
 
 app.post("/",userCtrl.addUser);
-
 
 app.listen(8000);
