@@ -20,7 +20,7 @@ db.sequelize=sequelize;
 
 
 
-db.sequelize.sync({ force:false }).then(()=>{
+db.sequelize.sync({ force:false, alter: true }).then(()=>{
     console.log("SYNCED")
 }).catch((err)=>{
     console.log("Error-->",err)

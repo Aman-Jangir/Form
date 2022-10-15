@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");  //middleWare--> to access req.body
 
 var userCtrl = require("./controller/userController");
 
-app.use(bodyParser.urlencoded({ extended:false }));       // to access form data 
+app.use(bodyParser.urlencoded({ extended:true }));       // to access form data 
 //app.use(express.urlencoded({ extended:false }));
 
 require("./model/app");
